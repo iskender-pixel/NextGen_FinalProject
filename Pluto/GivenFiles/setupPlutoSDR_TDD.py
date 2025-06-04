@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Mar 26 15:04:54 2025
-
-@author: Gaetano
-"""
-
 import adi
 
 def initialize_Pluto_TDD(PlutoIP,sample_rate,center_freq,rx_gain,tx_gain,rx_time_ms):
@@ -74,6 +67,8 @@ def initialize_Pluto_TDD(PlutoIP,sample_rate,center_freq,rx_gain,tx_gain,rx_time
     tddn.enable = True  # enable TDD engine
     
     print("SDR Configuration Completed")
+
+
 
     # Return the my_sdr and tddn objects
     return (my_sdr, tddn)
