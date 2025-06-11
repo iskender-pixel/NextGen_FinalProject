@@ -53,6 +53,8 @@ def plotSbeat(path):
     for i in range(99):
 
         s_beat += rx_data_matrix[i] * np.conj(sig_A)
+
+
     rx_data_added = np.zeros((len(rx[0,:])), dtype=complex)
 
     print(len(rx[:,0]))
@@ -77,7 +79,7 @@ def plotSbeat(path):
     s_beat_filtered = filtfilt(b, a, np.real(s_beat))
 
 
-    N_fft = 2^nextpow2(len(rx_data))*2
+    N_fft = 2**nextpow2(len(rx_data))*2
 
     freq_tone = np.abs(fftshift(fft(s_beat_filtered,N_fft)))
     freq_axis = np.linspace(-fs/2, fs/2, len(freq_tone))
